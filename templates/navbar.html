@@ -1,0 +1,34 @@
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="/main">
+                <img src="https://cdn.mos.cms.futurecdn.net/JYMtGzLr6f2RGuHkaxJjwD-1200-80.jpg" alt="Bootstrap" width="30" height="24">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_post">
+                            <button class="btn btn-outline-success me-2" type="button">პოსტის შექმნა</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">
+                            <button class="btn btn-outline-success me-2" type="button">გასვლა</button>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">
+                            <button class="btn btn-outline-success me-2" type="button">რეგისტრაცია</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/log_in">
+                            <button class="btn btn-outline-success me-2" type="button">ავტორიზაცია</button>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>

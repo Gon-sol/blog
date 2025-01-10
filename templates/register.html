@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if not user_already_exists %}
+    <div class="container mt-5">
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="row p-2">
+               {{ form.username(class="form-control", placeholder=form.username.label.text) }}
+            </div>
+
+            <div class="row p-2">
+               {{ form.password(class="form-control", placeholder=form.password.label.text) }}
+            </div>
+
+            <div class="row p-2">
+               {{ form.repeat_password(class="form-control", placeholder=form.repeat_password.label.text) }}
+            </div>
+
+            <div class="row p-2">
+               {{ form.role(class="form-control", placeholder=form.role.label.text) }}
+            </div>
+
+            {{ form.register(class="btn btn-primary", placeholder=form.register.label.text) }}
+        </form>
+
+    </div>
+    {% else %}
+    <div class="container mt-5">
+        <h1>user already exists</h1>
+    </div>
+    {% endif %}
+
+{% endblock %}
